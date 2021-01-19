@@ -3,19 +3,16 @@
 ### 1주차 과제 ###
 ---
 
-- 목록
-- 목록2
-  - 목록3
 1. 스프링 개발 환경 구축
  - JDK, Eclipse, Spring, Tomcat 설치
  - 웹 페이지 생성
-  - Spring Legacy Project 생성 > localhost:8080/프로젝트명/
+   - Spring Legacy Project 생성 > localhost:8080/프로젝트명/
 
 2. 데이터베이스 환경 구축
- ○ MariaDB 설치 
- ○ GUI 기반의 클라이언트인 MySQL Workbench 설치
- ○ 샘플 DB 구축 
-  - Theater 스키마 생성 > 데이터 INSERT (movie_name, director, type)
+ - MariaDB 설치 
+ - GUI 기반의 클라이언트인 MySQL Workbench 설치
+ - 샘플 DB 구축 
+   - Theater 스키마 생성 > 데이터 INSERT (movie_name, director, type)
 
 3. Spring, MariaDB, MyBatis 연동
  ○ MariaDB, MyBatis 관련 Dependency 추가 
