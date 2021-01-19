@@ -1,6 +1,6 @@
 # BackEnd Development Practice #
 
-## 1주차 과제 ##
+### 1주차 과제 ###
 
 1. 스프링 개발 환경 구축
  - JDK, Eclipse, Spring, Tomcat 설치
