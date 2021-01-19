@@ -5,7 +5,7 @@
 1. 스프링 개발 환경 구축
  - JDK, Eclipse, Spring, Tomcat 설치
  - 웹 페이지 생성
-  + Spring Legacy Project 생성 > localhost:8080/프로젝트명/
+  * Spring Legacy Project 생성 > localhost:8080/프로젝트명/
 
 2. 데이터베이스 환경 구축
  ○ MariaDB 설치 
