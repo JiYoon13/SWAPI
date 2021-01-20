@@ -60,6 +60,9 @@ Workbench에서 만든 데이터들을 어떻게 불러오게 되는건지 이�
   - 부서별 사용자 접속자수 
   - 로그인 요청 수
   - 게시글 작성 수
+2. SW 활용 현황 API 문서 가이드
+  - [2주차_SW 활용 현황 API 가이드 문서_김지윤.docx](https://github.com/JiYoon13/SWAPI/files/5842739/2._SW.API._.docx)
+
 ---
 
 
