@@ -39,12 +39,8 @@
    - localhost:8080/프로젝트명/ > localhost:8080/
  - 결과화면
  ![1주차_결과화면](https://user-images.githubusercontent.com/44959513/105055692-a7299500-5ab6-11eb-81d8-7dcd108f57e1.png)
- 
- ### ###
- ### ###
- ### ###
----
- 질문사항
+
+@ 질문사항
 1. log4dbc-log4j2-jdbc 등 로그와 관련된 파일이나 정보들은 꼭 필요한 부분인가요?? 어디서 어떻게 사용되는 부분인지 궁금합니다
 
 2. test.xml 파일이나 MovieVO.java 파일에서 MySQL Workbench의 데이터를 가져오는 부분은 Mybatis를 연동했기 때문에 되는 일인가요?? 
@@ -52,9 +48,6 @@ Workbench에서 만든 데이터들을 어떻게 불러오게 되는건지 이�
 
 3. home.jsp파일에서 실무에서는 보통 json으로 받아와 javascript이나 jquery등으로 뿌린다고 설명해주셨는데 그러면 home.jsp파일이 아닌 다른 파일을 추가로 생성해서 진행해야 하나요??
 ---
-### ###
-### ###
-### ###
 
 ### 2주차 과제 ###
 ---
@@ -67,7 +60,10 @@ Workbench에서 만든 데이터들을 어떻게 불러오게 되는건지 이�
 2. SW 활용 현황 API 문서 가이드
   - [2주차_SW 활용 현황 API 가이드 문서_김지윤.docx](https://github.com/JiYoon13/SWAPI/files/5842739/2._SW.API._.docx)
 
----
+@ 질문사항
+ 1. APi 문서 작성한 것 중에 잘못된 부분이 있나요?? 
+ ---
+ 
 
 
 
