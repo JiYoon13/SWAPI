@@ -70,22 +70,35 @@ Workbench에서 만든 데이터들을 어떻게 불러오게 되는건지 이�
 ---
 
 1. Rest란?
+
 하나의 URI는 하나의 고유한 리소스를 대표하도록 설계된다는 개념
+
 REST방식은 특정한 URI는 반드시 그에 상응하는 데이터 자체라는 것을 의미하는 방식이다.
 
 2. Rest API란?
+
 Rest API란 REST 아키텍처의 제약 조건을 준수하는 애플리케이션 프로그래밍 인터페이스로, 외부에서 특정 URL을 통해 사용자가 원하는 정보를 제공하는 방식
+
 REST는 HTTP를 기반으로 XML 또는 JSON을 이용하여 서버-클라이언트가 데이터를 주고받는 통신 방식
+
 # 스프링에서의 REST 
+
  @ResponseBody 애너테이션을 지원하게 되면서 REST 방식의 처리를 지원, @RestController를 통해 구현 가능
 
 - REST API는 자원, 행위, 표현으로 구성
+
 (1) Resource – URI
+
  - 클라이언트는 URI를 통해 서버에 해당 자원의 상태에 대한 조작을 요청
+ 
 (2) Verb – 행위, HTTP Method
+
  - GET, POST, PUT, DELETE 등
+ 
 (3) Representation
+
  - JSON, XML을 통해 데이터를 주고받음
+ 
 
 3. 스프링부트로 개발 환경 설정하기
 
@@ -98,23 +111,34 @@ REST는 HTTP를 기반으로 XML 또는 JSON을 이용하여 서버-클라이언
 ![캡처2](https://user-images.githubusercontent.com/44959513/106143154-b941bc80-61b5-11eb-9075-05a6640cd2cd.PNG)
 
 5. SQL 작성
+
  1) 월별 접속자 수
+ 
   select count(*) as totCnt
+  
   from statistc.requestinfo ri
+  
   where left(ri.CreateDate, 6) = #{YearMonth};
 
 
  2) 일자별 접속자수
+ 
 select count(*) as totCnt
+
 from statistc.requestinfo ri
+
 where ri.CreateDate = #{beginDate};
 
  3) 월 평균 하루 로그인 수
+ 
 select count(*)/31 as totCnt
+
 from statistc.requestinfo ri
+
 where left(ri.CreateDate, 6) = #{YearMonth};
 
  4) 휴일을 제외한 년별 로그인 수
+ 
 select count(*) as totCnt
 
 from statistc.requestinfo ri
@@ -122,6 +146,7 @@ from statistc.requestinfo ri
 where left(ri.CreateDate, 4) = #{Year}; not in (20210101, …)
 
  5) 부서별 월별 로그인 수
+ 
 select count(*) as totCnt
 
 from statistc.requestinfo ri
