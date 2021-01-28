@@ -99,9 +99,10 @@ REST는 HTTP를 기반으로 XML 또는 JSON을 이용하여 서버-클라이언
 
 5. SQL 작성
  1) 월별 접속자 수
-select count(*) as totCnt
-from statistc.requestinfo ri
-where left(ri.CreateDate, 6) = #{YearMonth};
+  select count(*) as totCnt
+  from statistc.requestinfo ri
+  where left(ri.CreateDate, 6) = #{YearMonth};
+
 
  2) 일자별 접속자수
 select count(*) as totCnt
