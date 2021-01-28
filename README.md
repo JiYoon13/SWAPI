@@ -88,11 +88,13 @@ REST는 HTTP를 기반으로 XML 또는 JSON을 이용하여 서버-클라이언
  - JSON, XML을 통해 데이터를 주고받음
 
 3. 스프링부트로 개발 환경 설정하기
+
 ![캡처](https://user-images.githubusercontent.com/44959513/106143097-ab8c3700-61b5-11eb-99ff-f4e182196317.PNG)
 
 4. [20년도 로그인 수 API] 스프링부트, Mybatis, mariadb 연동
 - workbench에서 DB, table 생성
 - Mybatis 연동
+
 ![캡처2](https://user-images.githubusercontent.com/44959513/106143154-b941bc80-61b5-11eb-9075-05a6640cd2cd.PNG)
 
 5. SQL 작성
