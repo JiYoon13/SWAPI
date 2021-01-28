@@ -115,12 +115,16 @@ where left(ri.CreateDate, 6) = #{YearMonth};
 
  4) 휴일을 제외한 년별 로그인 수
 select count(*) as totCnt
+
 from statistc.requestinfo ri
+
 where left(ri.CreateDate, 4) = #{Year}; not in (20210101, …)
 
  5) 부서별 월별 로그인 수
 select count(*) as totCnt
+
 from statistc.requestinfo ri
+
 where left(ri.CreateDate, 6) = #{YearMonth} AND ri.Dept_code = #{Dept};
 
 @ 질문사항
