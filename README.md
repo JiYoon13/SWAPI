@@ -157,5 +157,30 @@ where left(ri.CreateDate, 6) = #{YearMonth} AND ri.Dept_code = #{Dept};
 
  ---
 
+# #
 
+### 4주차 과제 ###
+---
+1. 통계를 위한 DB 작성
+![캡처](https://user-images.githubusercontent.com/44959513/106901322-f28ca600-673a-11eb-9fcf-46c02a1880c7.PNG)
+
+2. SW활용 현황 통계 API 구축
+ 1) 년별 접속자 수
+ 2) 월별 접속자 수
+ 2) 일별 접속자 수
+ 3) 월/부서별 접속자 수
+ 4) 평균 하루 로그인 수
+ 5) 게시글 작성 수
+ 6) 휴일을 제외한 로그인 수 
+- 공공 API 활용 > 공공 API 서비스 신청 완료
+- API를 가져오는 과정에서 오류 발생
+
+
+3. API 가이드 문서 보완
+ - 요청 URL 수정
+ - Response Body 수정
+[SW 활용 현황 API 가이드 문서_김지윤.docx](https://github.com/JiYoon13/SWAPI/files/5926149/SW.API._.docx)
+
+@ 질문사항
+1. 공공 API를 활용하려고 했는데 API를 처음 써보다보니 어떤식으로 가져와야 하는지 모르겠습니다..검색을 하긴 했는데 잘 안되더라구요..
    
