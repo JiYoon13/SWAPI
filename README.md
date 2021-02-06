@@ -176,6 +176,49 @@ where left(ri.CreateDate, 6) = #{YearMonth} AND ri.Dept_code = #{Dept};
  - 휴일을 제외한 로그인 수 
    - 공공 API 활용 > 공공 API 서비스 신청 완료
    - API를 가져오는 과정에서 오류 발생
+   
+   
+<!-- 년별 접속자 수 조회 -->
+	<select id="selectYearLogin" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri
+		where left(ri.createDate, 4) = #{year} and ri.requestCode = "L";
+	</select>
+	
+	<!-- 월별 접속자 수 조회 -->
+	<select id="selectMonthLogin" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri
+		where left(ri.createDate, 6) = #{month} and ri.requestCode = "L";
+	</select>
+	
+	<!-- 일별 접속자 수 조회 -->
+	<select id="selectDayLogin" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri
+		where ri.createDate = #{day} and ri.requestCode = "L";
+	</select>
+	
+	<!-- 부서별 월별 접속자 수 조회 -->
+	<select id="selectDeptMonthLogin" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri INNER JOIN statistc.user ui ON (ri.userID = ui.userID)
+		where ui.Dept_Code = #{dept} and left(ri.CreateDate, 6) = #{month} and ri.requestCode = "L";
+	</select>
+	
+	<!-- 월평균 접속자 수 조회 -->
+	<select id="selectMonthAvgLogin" parameterType="string" resultType="hashMap">
+		select substring(CreateDate, 1,6) as month, count(*)/31 as AVG
+		from statistc.requestinfo ri
+		where ri.requestCode = "L" group by substring(CreateDate, 1,6);
+	</select>
+	
+	<!-- 월별 게시글 작성 수 조회 -->
+	<select id="selectUserBoard" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri INNER JOIN statistc.user ui ON (ri.userID = ui.userID)
+		where ui.USERNAME = #{name} and left(ri.CreateDate, 6) = #{month} and ri.requestCode = "WB";
+	</select>
 
 
 3. API 가이드 문서 보완
