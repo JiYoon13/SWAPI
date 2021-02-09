@@ -220,6 +220,28 @@ where left(ri.CreateDate, 6) = #{YearMonth} AND ri.Dept_code = #{Dept};
 		where ui.USERNAME = #{name} and left(ri.CreateDate, 6) = #{month} and ri.requestCode = "WB";
 	</select>
 
+	<!-- 휴일을 제외한 접속자 수 조회 -->
+	<select id = "selectExceptHolidayLogin" parameterType="string" resultType="hashMap">
+		select count(*) as totCnt
+		from statistc.requestinfo ri
+		  <choose>
+			<when test='holidayList.size() == 0'> <!-- 공휴일이 없는 경우 -->
+				where left(ri.CreateDate, 6) = #{month} and ri.requestCode = "L"
+				and WEEKDAY(CONCAT(left(ri.CreateDate, 4), '-', mid(ri.CreateDate, 5,2), '-', right(ri.CreateDate, 2)))!=6; <!-- 일요일 제외 -->
+			</when>
+			<otherwise>
+				where left(ri.CreateDate, 6) = #{month} 
+				and WEEKDAY(CONCAT(left(ri.CreateDate, 4), '-', mid(ri.CreateDate, 5,2), '-', right(ri.CreateDate, 2)))!=6 <!-- 일요일 제외 -->
+				and ri.CreateDate NOT IN
+					<foreach collection="holidayList" item="item" open="(" separator="," close=")"> 
+					
+					
+						#{item}					
+					</foreach>
+				and ri.requestCode = "L";
+			</otherwise>
+		</choose> 
+	</select>
 
 3. API 가이드 문서 보완
 
@@ -228,6 +250,4 @@ where left(ri.CreateDate, 6) = #{YearMonth} AND ri.Dept_code = #{Dept};
  
 [SW 활용 현황 API 가이드 문서_김지윤.docx](https://github.com/JiYoon13/SWAPI/files/5926149/SW.API._.docx)
 
-@ 질문사항
-1. 공공 API를 활용하려고 했는데 API를 처음 써보다보니 어떤식으로 가져와야 하는지 모르겠습니다..검색을 하긴 했는데 잘 안되더라구요..
    
